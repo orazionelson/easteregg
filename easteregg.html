@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Easter egg in CSS</title>
+    <!-- Custom styles for this template -->
+    <style>
+body {
+	background-color:#fff;
+	font-size:16px
+	}
+
+.egg{
+	position: absolute;
+	top:0;
+	left:0;
+	border:1px solid yellow;
+	background-color:#F54B1A;
+	padding-top:0.5%;
+	}
+
+.top-left-quarter-container{
+	width:50%;
+	height:58%;
+	float:left;
+	}
+	
+.top-right-quarter-container{
+	width:50%;
+	height:58%;
+	float:right;
+	}
+	
+.bottom-left-quarter-container{
+	width:50%;
+	height:38%;
+	float:left;
+	}
+
+.bottom-right-quarter-container{
+	width:50%;
+	height:38%;
+	float:right;
+	}
+
+/*from http://www.css3shapes.com/*/
+/* width has to be 70% of height */
+/* could use width:70%; in a square container */
+.inegg{
+	display:block;
+	width:70%;
+	height:100%;
+	background-color:#CCC;	
+	}
+		
+.inegg-tl {
+	float:right;	
+	border-right-style:solid;
+	border-bottom-style:solid;
+	border-radius:97% 0 0 0/99% 0 0 0;    
+	}
+
+.inegg-tr {
+	float:left;	
+    border-left-style:solid;
+	border-bottom-style:solid;
+	border-radius:0 97% 0 0/0 99% 0 0;
+	}
+
+.inegg-bl {
+	float:right;	
+	border-right-style:solid;
+	border-top-style:solid;
+	border-radius:0 0 0 90%/0 0 0 99%;
+	}
+
+.inegg-br {
+	float:left;
+	border-left-style:solid;
+	border-top-style:solid;
+	border-radius:0 0 90% 0/0 0 99% 0;
+	}
+
+
+.ribbon{
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:100; 
+	padding-top:0.5%;
+	}
+
+.top-ribbon{
+	position: absolute; 
+	top:47%; 
+	width: 200px; 
+	height: 100px;
+	background: transparent; 
+	border-style:solid;
+	border-color:#85D4E3;
+	border-width:10px;
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	}
+
+.top-ribbon-left {	
+	left:39%;
+	border-radius:99%;	
+	-moz-transform: translate(-50%, -50%) rotate(45deg);
+	-webkit-transform: translate(-50%, -50%) rotate(45deg);
+	-ms-transform: translate(-50%, -50%) rotate(45deg);
+	-o-transform: translate(-50%, -50%) rotate(45deg);
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.top-ribbon-right {
+	left:61%;
+	border-radius:99%;	
+	-moz-transform: translate(-50%, -50%) rotate(-45deg);
+	-webkit-transform: translate(-50%, -50%) rotate(-45deg);
+	-ms-transform: translate(-50%, -50%) rotate(-45deg);
+	-o-transform: translate(-50%, -50%) rotate(-45deg);
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ribbon style */
+.ribbon-wrapper{
+	width: 150px;
+	position: absolute;
+	top:65%;
+
+	}
+	
+.ribbon-wrapper span{
+	color:#fff;
+	font-weight:bolder;
+	}
+	
+.ribbon-wrapper-left {
+	left:45%;
+	-webkit-transform: translate(-55%, -40%) rotate(-45deg);
+	transform: translate(-55%, -40%) rotate(-45deg);
+}
+
+.ribbon-wrapper-right {
+	left:55%;
+	-webkit-transform: translate(-45%, -40%) rotate(225deg);
+	transform: translate(-45%, -40%) rotate(225deg);
+}
+
+  .ribbon-front {
+	background-color: #85D4E3;	
+	height: 40px;
+	position: relative;
+	font-size:1.6em;
+	left:-10px;
+	z-index: 2;
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+}
+
+.ribbon-edge{
+	position: absolute;
+	z-index: 1;
+	border-style:solid;
+	height:0px;
+	width:0px;
+	left: -10px;
+	border-color: transparent #99c transparent transparent;
+	}
+
+  .ribbon-edge-left
+ {
+	top: -10px;
+	border-width: 10px 10px 0 0;
+}
+
+ .ribbon-edge-right
+ {
+	border-width: 0 10px 10px 0;
+}
+
+ .ribbon-back{
+	 position: absolute;
+	 left: -30px;
+	 width: 30px;
+	 height: 40px;
+	 background-color: #85D4E3;	
+	 z-index: 0;
+	 }
+
+ .ribbon-back-left {
+	top: -10px;
+}
+
+  .ribbon-back-right{
+	top: 10px;
+	}
+
+.easter{
+	display:block;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+	text-align:right;
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	}
+
+
+.star, .star-two, .star-three{
+	width:60px;
+	height:60px;
+	background: #1B346C;
+	position: absolute;
+	top:59%; left:50%;
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	}	
+
+.star {  
+   z-index:110;
+	}
+	
+.star-two {
+	z-index:111;
+	background: #01ABE9;
+   /* Rotate */
+   -moz-transform: translate(-50%, -50%) rotate(30deg);
+   -webkit-transform: translate(-50%, -50%) rotate(30deg);
+   -ms-transform: translate(-50%, -50%) rotate(30deg);
+   -o-transform: translate(-50%, -50%) rotate(30deg);
+   transform: translate(-50%, -50%) rotate(30deg);
+}
+
+.star-three {
+	z-index:112;
+	background: #85D4E3;
+   /* Rotate */
+   -moz-transform: translate(-50%, -50%) rotate(-30deg);
+   -webkit-transform: translate(-50%, -50%) rotate(-30deg);
+   -ms-transform: translate(-50%, -50%) rotate(-30deg);
+   -o-transform: translate(-50%, -50%) rotate(-30deg);
+   transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+/*gradient by http://www.colorzilla.com/gradient-editor/ */
+.inegg-tl, .inegg-tr{
+	background: #90d5ec; /* Old browsers */
+background: -moz-linear-gradient(top,  #90d5ec 0%, #c9eaf5 65%, #e5fffe 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#90d5ec), color-stop(65%,#c9eaf5), color-stop(100%,#e5fffe)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #90d5ec 0%,#c9eaf5 65%,#e5fffe 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #90d5ec 0%,#c9eaf5 65%,#e5fffe 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #90d5ec 0%,#c9eaf5 65%,#e5fffe 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #90d5ec 0%,#c9eaf5 65%,#e5fffe 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90d5ec', endColorstr='#e5fffe',GradientType=0 ); /* IE6-9 */
+
+	}
+	
+
+.inegg-bl, .inegg-br{
+	background: #e5fffe; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e5fffe 0%, #c9eaf5 35%, #90d5ec 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5fffe), color-stop(35%,#c9eaf5), color-stop(100%,#90d5ec)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e5fffe 0%,#c9eaf5 35%,#90d5ec 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e5fffe 0%,#c9eaf5 35%,#90d5ec 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e5fffe 0%,#c9eaf5 35%,#90d5ec 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e5fffe 0%,#c9eaf5 35%,#90d5ec 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5fffe', endColorstr='#90d5ec',GradientType=0 ); /* IE6-9 */	
+	}
+</style>
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+	<div class="egg">
+		<div class="top-left-quarter-container">
+		<div class="inegg inegg-tl"></div>
+		</div>
+		<div class="top-right-quarter-container">
+		<div class="inegg inegg-tr"></div>
+		</div>
+		<div class="bottom-left-quarter-container">
+		<div class="inegg inegg-bl"></div>
+		</div>
+		<div class="bottom-right-quarter-container">
+		<div class="inegg inegg-br"></div>
+		</div>
+    </div>
+    
+    <div class="ribbon" >
+		<div class="top-ribbon top-ribbon-left"></div>
+		<div class="top-ribbon top-ribbon-right"></div>
+    	<div class="ribbon-wrapper ribbon-wrapper-left">
+		<div class="ribbon-front">
+	
+		</div>
+		<div class="ribbon-edge ribbon-edge-left"></div>
+		<div class="ribbon-back ribbon-back-left"></div>
+		</div>
+    	<div class="ribbon-wrapper ribbon-wrapper-right">
+		<div class="ribbon-front">
+	
+		</div>
+		<div class="ribbon-edge ribbon-edge-right"></div>
+		<div class="ribbon-back ribbon-back-right"></div>
+		</div>
+		<div class="star"></div>
+		<div class="star-two"></div>
+		<div class="star-three"></div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+    //Reload on resizing: needs to calulate proportions
+	$(window).bind('resize',function(){
+		window.location.href = window.location.href;
+	});
+    
+    //Set the egg and the ribbon containers in a square of 90% of window height
+    $(".egg,.ribbon").css("height", ($(window).height()/10)*9 + "px");
+    $(".egg,.ribbon").css("width", ($(window).height()/10)*9 + "px");
+    
+    //Set the inner borders of egg quarters at more or less 3.33% of egg height 
+	$(".inegg-tl, .inegg-bl").css("borderRightWidth", ($(".inegg-tl").height()/30)*1 + "px");  
+    $(".inegg-tl, .inegg-bl").css("borderRightColor", 'white'); 
+    
+    $(".inegg-tl, .inegg-tr").css("borderBottomWidth", ($(".inegg-tl").height()/30)*1 + "px");  
+    $(".inegg-tl, .inegg-tr").css("borderBottomColor", 'white');  
+
+    $(".inegg-tr, .inegg-br").css("borderLeftWidth", ($(".inegg-tl").height()/30)*1 + "px");  
+    $(".inegg-tr, .inegg-br").css("borderLeftColor", 'white'); 
+    
+	$(".inegg-bl, .inegg-br").css("borderTopWidth", ($(".inegg-tl").height()/30)*1 + "px");  
+    $(".inegg-bl, .inegg-br").css("borderTopColor", 'white');
+    
+    //.top-ribbon, 40%
+    $(".top-ribbon").css("height", ($(".inegg-tl").width()/10)*4 + "px");
+    $(".top-ribbon").css("width", ($(".top-ribbon").height())*2 + "px");
+    $(".top-ribbon").css("borderWidth", ($(".ribbon").height()/30)*1 + "px");
+        
+    //set the Happy easter ribbons at x% of .ribbon box 
+    $(".ribbon-wrapper, .ribbon-front").css("width", ($(".ribbon").width()/10)*2 + "px");
+    $(".ribbon-front").css("height", ($(".ribbon").height()/20)*1 + "px");
+    
+    //set the ribbon-back height in function of ribbon-front   
+    $(".ribbon-back").css("height", $(".ribbon-front").height() + "px");
+    
+    //set the star at 10% of .ribbon box height
+    $(".star, .star-two, .star-three").css("width", ($(".ribbon").height()/10)*1 + "px");
+    $(".star, .star-two, .star-three").css("height", ($(".ribbon").height()/10)*1 + "px");
+    
+    </script>
+  </body>
+</html>
