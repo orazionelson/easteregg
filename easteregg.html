@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Easter egg in CSS</title>
-    <!-- Custom styles for this template -->
     <style>
 body {
 	background-color:#fff;
@@ -20,7 +18,7 @@ body {
 	top:0;
 	left:0;
 	border:1px solid yellow;
-	background-color:#F54B1A;
+	background-color:#89B151;
 	padding-top:0.5%;
 	}
 
@@ -48,9 +46,6 @@ body {
 	float:right;
 	}
 
-/*from http://www.css3shapes.com/*/
-/* width has to be 70% of height */
-/* could use width:70%; in a square container */
 .inegg{
 	display:block;
 	width:70%;
@@ -130,7 +125,7 @@ body {
 	transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* ribbon style */
+/* bottom ribbon style */
 .ribbon-wrapper{
 	width: 150px;
 	position: absolute;
@@ -206,16 +201,6 @@ body {
 	top: 10px;
 	}
 
-.easter{
-	display:block;
-	-webkit-transform: rotate(180deg);
-	transform: rotate(180deg);
-	text-align:right;
-	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-	}
 
 
 .star, .star-two, .star-three{
@@ -299,7 +284,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90d5ec', end
 
   <body>
 
-
 	<div class="egg">
 		<div class="top-left-quarter-container">
 		<div class="inegg inegg-tl"></div>
@@ -339,7 +323,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90d5ec', end
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
-    //Reload on resizing: needs to calulate proportions
+    //Reload on resizing: needs to calculate proportions
 	$(window).bind('resize',function(){
 		window.location.href = window.location.href;
 	});
@@ -350,16 +334,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90d5ec', end
     
     //Set the inner borders of egg quarters at more or less 3.33% of egg height 
 	$(".inegg-tl, .inegg-bl").css("borderRightWidth", ($(".inegg-tl").height()/30)*1 + "px");  
-    $(".inegg-tl, .inegg-bl").css("borderRightColor", 'white'); 
+    $(".inegg-tl, .inegg-bl").css("borderRightColor", '#F4DDBE'); 
     
     $(".inegg-tl, .inegg-tr").css("borderBottomWidth", ($(".inegg-tl").height()/30)*1 + "px");  
-    $(".inegg-tl, .inegg-tr").css("borderBottomColor", 'white');  
+    $(".inegg-tl, .inegg-tr").css("borderBottomColor", '#F4DDBE');  
 
     $(".inegg-tr, .inegg-br").css("borderLeftWidth", ($(".inegg-tl").height()/30)*1 + "px");  
-    $(".inegg-tr, .inegg-br").css("borderLeftColor", 'white'); 
+    $(".inegg-tr, .inegg-br").css("borderLeftColor", '#F4DDBE'); 
     
 	$(".inegg-bl, .inegg-br").css("borderTopWidth", ($(".inegg-tl").height()/30)*1 + "px");  
-    $(".inegg-bl, .inegg-br").css("borderTopColor", 'white');
+    $(".inegg-bl, .inegg-br").css("borderTopColor", '#F4DDBE');
     
     //.top-ribbon, 40%
     $(".top-ribbon").css("height", ($(".inegg-tl").width()/10)*4 + "px");
